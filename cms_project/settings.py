@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-te3d&+=d!3u#7yyo1ek*b@6exqaiyr-*q-gd8v9r&@j^xl5koy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sttheresaasawase.onrender.com']
+CSRF_TRUSTED_ORIGIN = ['sttheresaasawase.onrender.com']
 
 
 # Application definition
