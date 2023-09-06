@@ -1,7 +1,11 @@
- @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
- body {
-     font-family: 'Poppins', sans-serif;
+body {
+    font-family: 'Space Grotesk', sans-serif;
+ }
+
+ *{
+    font-family: 'Space Grotesk', sans-serif;
  }
 
  header {
@@ -12,10 +16,15 @@
      grid-template-columns: 1fr 1fr;
  }
   .doc-form {
-      overflow-y: scroll;
+    padding: 0 5%;
+      /* overflow-y: scroll;
       position: relative;
-      left: 250px;
+      left: 250px; */
       /* border: 2px solid turquoise; */
+  }
+  .stat-display{
+padding:0 5%;
+width:100%;
   }
 
   .mm {
@@ -32,6 +41,7 @@
         padding-block: 50px;
         background-color: #fff;
         width: 95%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
  }
  .one {
      padding: 0 5%;
@@ -40,6 +50,7 @@
      width: 95%;
      text-align: center;
      margin-top: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
  }
 
  .chart {
@@ -48,3 +59,32 @@
      margin-bottom: 50px;
  }
 
+       
+ .stat-display {
+     padding: 0 5%;
+ }
+
+ 
+
+
+ @media only screen and (max-width: 900px) {
+    .chart {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .one{
+        margin: 0 auto !important;
+
+    }
+ }
+
+ @media only screen and (max-width: 600px) {
+     .chart {
+         display: grid;
+         grid-template-columns: 1fr ;
+     }
+         .one {
+             margin: 0 auto !important;
+    
+         }
+ }
