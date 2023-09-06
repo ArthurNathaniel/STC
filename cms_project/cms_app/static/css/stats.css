@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+ }
+
+ *{
+    font-family: 'Space Grotesk', sans-serif;
+ }
+
+ header {
+     background-color: #fff;
+     padding: 0 2%;
+     padding-block: 20px;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+ }
+  .doc-form {
+    padding: 0 5%;
+      /* overflow-y: scroll;
+      position: relative;
+      left: 250px; */
+      /* border: 2px solid turquoise; */
+  }
+  .stat-display{
+padding:0 5%;
+width:100%;
+  }
+
+  .mm {
+      position: fixed;
+  }
+
+ .population {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+ }
+
+ .box{
+    padding: 0 5%;
+        padding-block: 50px;
+        background-color: #fff;
+        width: 95%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+ }
+ .one {
+     padding: 0 5%;
+     padding-block: 20px;
+     background-color: #fff;
+     width: 95%;
+     text-align: center;
+     margin-top: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+ }
+
+ .chart {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     margin-bottom: 50px;
+ }
+
+       
+ .stat-display {
+     padding: 0 5%;
+ }
+
+ 
+
+
+ @media only screen and (max-width: 900px) {
+    .chart {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .one{
+        margin: 0 auto !important;
+
+    }
+ }
+
+ @media only screen and (max-width: 600px) {
+     .chart {
+         display: grid;
+         grid-template-columns: 1fr ;
+     }
+         .one {
+             margin: 0 auto !important;
+    
+         }
+ }

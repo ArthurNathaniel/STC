@@ -1,0 +1,34 @@
+.edit-page {
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    height: 100vh;
+}
+
+form {
+    width: 80%;
+    margin: 0 10%;
+    background-color: f4f2f5;
+    padding: 50px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+form input {
+    height: 55px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+form select {
+    height: 55px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}

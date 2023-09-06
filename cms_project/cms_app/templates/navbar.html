@@ -1,0 +1,125 @@
+<div class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand navbar-logo" href="{% url 'stats' %}">
+
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span> <!-- Font Awesome icon for bars -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'stats' %}">
+                           Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <!-- <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Membership<i class="fas fa-angle-down"></i>
+                    </a> -->
+                        <a class="nav-link" href="#" id="navbarDropdownMembership" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Membership<i class="fas fa-angle-down"></i>
+                        </a>
+
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'add_member' %}">
+                                    <i class="fas fa-user-plus"></i> Add Member
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'view_member' %}">
+                                    <i class="fas fa-users"></i> View Members
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Payment<i class="fas fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'add_payment' %}">
+                                    <i class="fab fa-cc-visa"></i> Add Payment
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'view_payment' %}">
+                                    <i class="fas fa-money-check-alt"></i> View Payments
+                                </a>
+                            </li>
+                        </ul>
+                    </li> -->
+
+    <li class="nav-item dropdown">
+        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Document<i class="fas fa-angle-down"></i>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'document' %}">
+                <i class="far fa-file-pdf"></i> Add Document
+                </a>
+            </li>
+            <li><a class="dropdown-item" href="{% url 'view_document' %}">
+                <i class="far fa-file-pdf"></i>View Document
+                </a>
+            </li>
+        </ul>
+    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="{% url 'document' %}">
+                            <i class="far fa-file-pdf"></i> Document
+                        </a>
+                    </li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'view_document' %}">
+        <i class="far fa-file-pdf"></i>View Document
+    </a>
+</li> -->
+
+                </ul>
+                <button class="btn">
+                    <a href="{% url 'logout' %}" class="nav-btn"><i class="fas fa-sign-out-alt "></i>
+                        Logout</a>
+                </button>
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+<style>
+    .navbar-logo {
+        width: 80px;
+        height: 80px;
+        background-image: url(../static/images/logo-.jpg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .navbar {
+        padding-left: 5%;
+        padding-right: 5%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .nav-btn {
+        padding: 15px 35px;
+        border-radius: 5px;
+        color: #FFF;
+        background-color: #ccce85;
+        text-decoration: none;
+    }
+
+    .nav-btn:hover {
+        color: #FFF;
+    }
+</style>

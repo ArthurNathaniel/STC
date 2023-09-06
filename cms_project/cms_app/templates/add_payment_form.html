@@ -1,0 +1,48 @@
+
+<div class="whole">
+    <form method="post" class="forms" >
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+            {% csrf_token %}
+
+        <div class="row">
+            <div class="col-md-6">
+                <label>Name:</label>
+                <br>
+                <input type="text" placeholder="Enter your name" name="name" required>
+            </div>
+            <!-- <div class="col-md-6">
+                <label>Date & Time:</label>
+                <br>
+                <input type="date" placeholder="Set the date"  name="date" required>
+            </div> -->
+            <div class="col-md-6">
+                <label>Amount:</label>
+                <br>
+                <input type="number" id="amount" min="0" placeholder="Enter the amount GH₵" name="amount" step="0.01"
+                    required>
+            </div>
+            <div class="col-md-6">
+                <label for="payment-type">Type of Payment:</label>
+                <br>
+                <select id="payment-type" name="payment_type">
+                    <option value="Welfare">Welfare Dues</option>
+                    <option value="Church">Church Dues</option>
+                    <option value="Harvest">Harvest Dues</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <button type="submit"><i class="fas fa-credit-card"></i> Add Payment</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+

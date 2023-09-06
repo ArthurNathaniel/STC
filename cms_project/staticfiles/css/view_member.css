@@ -1,0 +1,81 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ body {
+     font-family: 'Poppins', sans-serif;
+ }
+
+ .doc-form {
+     overflow-y: scroll;
+     position: relative;
+     left: 250px;
+ }
+
+ .mm {
+     position: fixed;
+ }
+
+ .search{
+    background-color: #fff;
+        padding: 0 2%;
+    padding-block: 20px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+
+ .search-btn input{
+    height: 45px;
+    background-color: #fff;
+    width: 80%;
+    border: 2px solid #41414163;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    border-radius: 5px;
+    padding-left: 5%;
+ }
+
+ .add-btn{
+    display: flex;
+    justify-content: flex-end;
+ }
+ .add-btn button{
+    padding: 15px 55px;
+    background-color: #ccce85;
+    border: none;
+    border-radius: 5px;
+ }
+ .add-btn a{
+    color: #fff;
+    text-decoration: none;
+ }
+ thead{
+    border: 2px solid;
+    background-color: #ccce85;
+    color: #fff;
+ }
+
+/* custom.css */
+
+.profile-image {
+   width: 100px;
+   height: 100px;
+   background-position: center;
+   background-size: cover;
+   /* border-radius: 50%; */
+}
+
+.table tr td {
+   vertical-align: middle;
+}
+
+.search-container {
+   position: relative;
+}
+
+.search-icon {
+   position: absolute;
+   top: 50%;
+   left: 10px;
+   transform: translateY(-50%);
+   pointer-events: none;
+}

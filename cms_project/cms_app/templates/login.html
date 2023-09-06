@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - St.Theresa's Catholic Church</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+    <div class="whole">
+        <div class="target">
+            <div class="one" style="background-image: url('../static/images/nn.jpg');">
+            </div>
+            <div class="two">
+
+                <div class="logo" style="background-image: url('../static/images/logo-.jpg');"></div>
+
+                <form method="POST" action="{% url 'login' %}">
+
+                    {% csrf_token %}
+                    {% if error %}
+                    <p class="error-message">{{ error }}</p>
+                    {% endif %}
+                    <h3>Welcome Back!</h3>
+                    <div class="login-input">
+                        <label for="username">Username:</label>
+                        <br>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="login-input">
+                        <label for="password">Password:</label>
+                        <br>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="login-input">
+                        <input type="submit" value="Login" class="login-submit" style="border: none; height:55px;">
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<style>
+    @media only screen and (max-width: 900px) {
+        *{
+            overflow-x: hidden;
+        }
+        body {
+            /* overflow-x: hidden; */
+            width: 100%;
+        }
+
+        .whole {
+            height: 100vh;
+          
+              display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          align-self: center;
+         
+        }
+
+        .target {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+              display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          align-self: center;
+      
+          height: 100vh;
+           
+        }
+
+        .one {
+            display: none;
+        }
+form{
+    display: block;
+    width: 100%;
+}
+
+       .two {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	width: 95%;
+	height: 100vh;
+	margin: 0 10%;
+}
+    }
+
+    @media only screen and (max-width: 600px) {
+        .whole {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .two {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            width: 100%;
+            height: 100vh;
+        }
+      
+    }
+</style>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - St.Theresa's Catholic Church</title>
+    <link rel="icon" href="{% static 'images/logo-.jpg' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/stats.css' %}"
+    />
+  </head>
+
+  <body onload="displayGreeting()">
+    <div class="col-md-12">{% include 'navbar.html' %}</div>
+
+    <h3 class="text-center mt-5">Welcome {{user}},</h3>
+    <section>
+      <div class="stat-display">
+        <div class="chart">
+          <div class="one">
+            <p>Total Church Members</p>
+            <canvas id="tm"></canvas>
+          </div>
+          <div class="one">
+            <p>Gender</p>
+            <canvas id="myChart"></canvas>
+          </div>
+          <div class="one">
+            <p>Mother's Religious Denomination</p>
+            <canvas id="myChartt"></canvas>
+          </div>
+          <div class="one">
+            <p>Father's Religious Denomination</p>
+            <canvas id="father"></canvas>
+          </div>
+          <div class="one">
+            <p>Martial Status</p>
+            <canvas id="ms"></canvas>
+          </div>
+          <div class="one">
+            <p>If Married</p>
+            <canvas id="im"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% include 'footer.html' %}
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="{% static 'js/dashboard.js' %}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const total = document.getElementById('tm');
+      new Chart(total, {
+          type: 'polarArea',
+          data: {
+              labels: ['Total Population'],
+              datasets: [{
+                  label: 'Total Members',
+                  data: [{{ total_members }}],
+              borderWidth: 1
+          }]
+      },
+          options: {
+          animation: {
+              duration: 1500, // Animation duration in milliseconds
+              easing: 'easeOutQuart', // Easing function for the animation
+              animateRotate: true, // Animate the rotation of the chart
+              animateScale: true // Animate scaling of the chart
+          }
+      }
+      });
+    </script>
+
+    <script>
+      const ctx = document.getElementById('myChart');
+      new Chart(ctx, {
+          type: 'pie',
+          data: {
+              labels: ['Male', 'Female'],
+              datasets: [{
+                  label: 'Member(s)',
+                  data: [{{ male_count }}, {{ female_count }}],
+          borderWidth: 1
+      }]
+           },
+           options: {
+          animation: {
+              duration: 1500, // Animation duration in milliseconds
+              easing: 'easeInOutQuint', // Easing function for the animation
+              animateRotate: true, // Animate the rotation of the chart
+              animateScale: true // Animate scaling of the chart
+          }
+      }
+      });
+    </script>
+    <script>
+      const mrd = document.getElementById('myChartt');
+      new Chart(mrd, {
+          type: 'pie',
+          data: {
+              labels: ['Catholics', 'Other'],
+              datasets: [{
+                  label: "Mother's Denomination",
+                  data: [{{ mother_catholic }}, {{ mother_other }}],
+          borderWidth: 1
+      }]
+           },
+            options: {
+          animation: {
+              duration: 1500, // Animation duration in milliseconds
+              easing: 'easeInCubic', // Easing function for the animation
+              animateRotate: true, // Animate the rotation of the chart
+              animateScale: true // Animate scaling of the chart
+          }
+      }
+      });
+    </script>
+    <script>
+      const frd = document.getElementById('father');
+      new Chart(frd, {
+          type: 'doughnut',
+          data: {
+              labels: ['Catholics', 'Other'],
+              datasets: [{
+                  label: "Father's Denomination",
+                  data: [{{ father_catholic }}, {{ father_other }}],
+          borderWidth: 1
+      }]
+           },
+            options: {
+          animation: {
+              duration: 1500, // Animation duration in milliseconds
+              easing: 'easeInOutQuart', // Easing function for the animation
+              animateRotate: true, // Animate the rotation of the chart
+              animateScale: true // Animate scaling of the chart
+          }
+      }
+      });
+    </script>
+
+    <script>
+          const ms = document.getElementById('ms');
+          new Chart(ms, {
+              type: 'doughnut',
+              data: {
+                  labels: ['Single', 'Married', 'Widowed'],
+                  datasets: [{
+                      label: "Martial Status",
+                      data: [{{ single }}, {{ married }},  {{ widowed }}],
+              borderWidth: 1
+      }]
+               },
+                options: {
+              animation: {
+                  duration: 1500, // Animation duration in milliseconds
+                  easing: 'easeInQuad', // Easing function for the animation
+                  animateRotate: true, // Animate the rotation of the chart
+                  animateScale: true // Animate scaling of the chart
+              }
+          }
+          });
+    </script>
+
+    <script>
+      const im = document.getElementById('im');
+      new Chart(im, {
+          type: 'pie',
+          data: {
+              labels: ['N/A', 'Holy Matrimony', 'Traditional Marriage',],
+              datasets: [{
+                  label: "If Married",
+                  data: [{{ nothing }}, {{ holy }}, {{ traditional }} ],
+          borderWidth: 1
+      }]
+           },
+            options: {
+          animation: {
+              duration: 1500, // Animation duration in milliseconds
+              easing: 'linear', // Easing function for the animation
+              animateRotate: true, // Animate the rotation of the chart
+              animateScale: true // Animate scaling of the chart
+          }
+      }
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  .one {
+    margin: 0 auto !important;
+    margin-top: 50px !important;
+  }
+</style>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
+    <link rel="icon" href="{% static 'images/logo-.jpg' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/delete_payment.css' %}">
+
+</head>
+
+<body>
+    <div class="whole">
+        <div class="del">
+            <h1 style="text-align: center;">Second Attempt</h1>
+            <hr>
+            <h1> Delete Payment</h1>
+            
+            <p>Are you sure you want to delete the payment named: {{ payment.name }}?</p>
+            
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit"><i class="fas fa-trash-alt"></i> YES DELETE</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

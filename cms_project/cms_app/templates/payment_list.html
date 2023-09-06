@@ -1,0 +1,59 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Payment List</title>
+</head>
+
+<body>
+    <h1>Payment List</h1>
+    <ul>
+        {% for payment in payments %}
+        <li>{{ payment }}</li>
+        {% empty %}
+        <li>No payments found.</li>
+        {% endfor %}
+
+    </ul>
+
+    <a href="    {% url 'add_payment' %}
+"> Add Payment</a>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Payment</title>
+    <link rel="icon" href="{% static 'images/logo-.jpg' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/delete_payment.css' %}">
+
+</head>
+
+<body>
+    <div class="whole">
+        <div class="del">
+            <h1>Payment Successfully Deleted</h1>
+
+
+            <form method="post">
+                {% csrf_token %}
+                <button> 
+                    <a href="    {% url 'view_payment' %}
+                    ">Return to View Payment</a>
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
